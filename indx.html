@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>King Clean</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>King Clean</h1>
+
+<div id="auth">
+  <h2>Login / Register</h2>
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+
+  <select id="role">
+    <option value="pelanggan">Pelanggan</option>
+    <option value="cleaner">Cleaning Service</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button onclick="register()">Register</button>
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="dashboard" style="display:none;">
+  <h2>Dashboard</h2>
+  <p id="userRole"></p>
+
+  <div id="pelangganUI" class="hidden">
+    <h3>Layanan</h3>
+    <p>Harga: Rp 25.000 / jam</p>
+    <p>Min rumah kecil: 2 jam</p>
+    <p>Min rumah besar: 3 jam</p>
+
+    <input id="alamat" placeholder="Alamat">
+    <input id="jam" type="number" placeholder="Jam">
+
+    <button onclick="order()">Order</button>
+
+    <h3>Top Up</h3>
+    <input id="topup" type="number" placeholder="Minimal 25000">
+    <button onclick="topUp()">Top Up</button>
+
+    <br><br>
+    <a href="https://wa.me/6282141285551" target="_blank">
+      Hubungi CS
+    </a>
+  </div>
+
+  <div id="cleanerUI" class="hidden">
+    <h3>Job Tersedia</h3>
+    <ul id="jobs"></ul>
+
+    <a href="https://wa.me/6282141285551" target="_blank">
+      Hubungi Admin
+    </a>
+  </div>
+
+  <div id="adminUI" class="hidden">
+    <h3>Admin Panel</h3>
+    <p>Atur harga (simulasi)</p>
+    <input id="hargaBaru" placeholder="Harga baru">
+    <button onclick="updateHarga()">Update</button>
+  </div>
+
+  <br>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
